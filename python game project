@@ -1,0 +1,41 @@
+import random
+
+def gamewin(comp, you):
+    if comp == you:
+        return None
+    elif comp == 's':
+        if you == 'w':
+            return False
+        elif you == 'g':
+            return True
+    elif comp == 'w':
+        if you == 'g':
+            return False
+    elif you == 'g':
+        return True
+    elif comp == 'g':
+        if you == 's':
+            return False
+    elif you == 'w':
+        return True
+
+print("Comp Turn: Snake(s), Water (w) or Gun (g)")
+rando = random.randint(1, 2,)
+if rando == 1:
+    comp ='s'
+elif rando == 2:
+    comp = 'w'
+elif rando == 3 :
+    comp = 'g'
+
+you = input("Your trun: Snake(s), Water(w) or Gun(g)")
+a = gamewin (comp, you)
+print (f"Computer chosee {comp}")
+print(f"Your chosee {you}")
+if a == None:
+    print("The game is tie!")
+elif a:
+    print("You win")
+else:
+    print("You lose")
+     
